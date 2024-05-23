@@ -13,39 +13,39 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 # Title and Icon
 pygame.display.set_caption("Space Invaders")
 icon = pygame.image.load('./space_game/icon.png')
-icon = pygame.transform.scale(icon, (32, 32))  # Scale the icon
+icon = pygame.transform.scale(icon, (32, 32)) 
 pygame.display.set_icon(icon)
 
 # Background
 background = pygame.image.load('./space_game/background.png')
-background = pygame.transform.scale(background, (screen_width, screen_height))  # Scale background
+background = pygame.transform.scale(background, (screen_width, screen_height)) 
 
 # Player
 player_img = pygame.image.load('./space_game/player.png')
-player_img = pygame.transform.scale(player_img, (64, 64))  # Scale the player image
+player_img = pygame.transform.scale(player_img, (64, 64))  
 player_x = 370
 player_y = 480
 player_x_change = 0
-player_speed = 2  # Adjusted speed
+player_speed = 2  
 
 # Enemy
 enemy_img = pygame.image.load('./space_game/enemy.png')
-enemy_img = pygame.transform.scale(enemy_img, (64, 64))  # Scale the enemy image
+enemy_img = pygame.transform.scale(enemy_img, (64, 64)) 
 enemies = []
 num_of_enemies = 10
 
 for i in range(num_of_enemies):
     enemy_x = random.randint(0, 735)
     enemy_y = random.randint(50, 150)
-    enemies.append([enemy_x, enemy_y, 1])  # Add speed parameter for each enemy
+    enemies.append([enemy_x, enemy_y, 1])  
 
 enemy_y_change = 40
 
 # Bullet
 bullet_img = pygame.image.load('./space_game/bullet.png')
-bullet_img = pygame.transform.scale(bullet_img, (22, 22))  # Scale the bullet image
+bullet_img = pygame.transform.scale(bullet_img, (22, 22)) 
 bullets = []
-bullet_y_change = 5  # Adjusted speed
+bullet_y_change = 5  
 
 # Score
 score_value = 0
@@ -134,10 +134,10 @@ while running:
             enemy_x, enemy_y, enemy_x_change = enemy_pos
             enemy_x += enemy_x_change
             if enemy_x <= 0:
-                enemy_x_change = 1  # Adjusted speed
+                enemy_x_change = 1  
                 enemy_y += enemy_y_change
             elif enemy_x >= 736:
-                enemy_x_change = -1  # Adjusted speed
+                enemy_x_change = -1 
                 enemy_y += enemy_y_change
         
             # Update enemy position in the list
@@ -180,7 +180,7 @@ while running:
     pygame.display.update()
 
     # Control the frame rate
-    clock.tick(60)  # 60 frames per second
+    clock.tick(60)
 
 # Quit Pygame
 pygame.quit()

@@ -5,7 +5,7 @@ import random
 pygame.init()
 
 # Set up the display
-screen = pygame.display.set_mode((450, 600))  # Adjust width to include score area
+screen = pygame.display.set_mode((450, 600))  
 pygame.display.set_caption("Tetris")
 
 # Define colors
@@ -128,12 +128,11 @@ def main():
     fall_time = 0
     fall_speed = 0.5
     game_width, game_height = 300, 600  # Width and height of the game area
-    cell_size = 30  # Size of each cell in the grid
+    cell_size = 30  
 
     while running:
         screen.fill(BLACK)
         
-        # Draw grid lines only within the game area
         for x in range(0, game_width + 1, cell_size):
             pygame.draw.line(screen, GREY, (x, 0), (x, game_height))
         for y in range(0, game_height + 1, cell_size):
